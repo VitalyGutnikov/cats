@@ -1,11 +1,17 @@
 .box {
-	background: #FFFFFF;
-	mix-blend-mode: normal;
-	border-radius: 50px;
+
+	&__container {
+		background-color: #FFFFFF;
+		mix-blend-mode: normal;
+		border-radius: 50px;
+		box-sizing: border-box;
+		padding: 80px 46px;
+	}
 
 	&__cards{
 		display: grid;
-		grid-template-columns: repeat(4, minmax(200px, 400px));
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
 	}
 
 	&__title {
@@ -16,8 +22,60 @@
 		align-items: center;
 		letter-spacing: -0.04em;
 		margin: 0;
-		padding-top: 80px;
 		padding-bottom: 65px;
 	}
+}
 
+.cards {
+	letter-spacing: -0.04em;
+
+	&__item {
+		background: #D4EAFF;
+		mix-blend-mode: normal;
+		border-radius: 40px;
+		padding: 10px 10px 37px 10px;
+	}
+
+	&__image {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 224px;
+		border-radius: 30px;
+	}
+
+	&__cat {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+	}
+
+	&__subtitle {
+		font-size: 34px;
+		line-height: 0.9;
+		margin: 0;
+		padding: 20px 0px 30px 20px;
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		font-size: 17px;
+		line-height: 1;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	&__list-item {
+		margin-bottom: 10px;
+
+		&::before {
+			content:  "-";
+			margin-right: 8px;
+		}
+	}
 }
